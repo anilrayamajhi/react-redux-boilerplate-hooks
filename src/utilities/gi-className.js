@@ -6,6 +6,6 @@ export function GIClassNameProvider({ generateClassName, children }) {
   return <Context.Provider value={generateClassName} children={children} />;
 }
 
-export function useGIClassName(){
-  return useContext(Context)
+export function useGIClassName() {
+  return useContext(Context);
 }

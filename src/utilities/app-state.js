@@ -9,7 +9,9 @@ const Context = createContext();
 // const reducer = combineReducers(reducers);
 // const initialState = reducer({}, {type: '@@INIT'})
 
-export function AppStateProvider({ reducer, initialState = {}, children }) {
+const INITIAL_STATE = {posts: { all: [], post: null, loading: true }}
+
+export function AppStateProvider({ reducer, initialState = INITIAL_STATE, children }) {
   const value = useReducer(reducer, initialState);
   return <Context.Provider value={value} children={children} />;
 }

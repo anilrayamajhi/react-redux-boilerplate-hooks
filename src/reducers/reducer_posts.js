@@ -1,6 +1,6 @@
-import { GET_POSTS, GET_POST } from "../actions/index";
+import { GET_POSTS, GET_POST } from "../actions/types";
 
-const INITIAL_STATE = { all: [], post: null };
+const INITIAL_STATE = { all: [], post: null, loading: true };
 
 export default function(state = INITIAL_STATE, action) {
   switch (action.type) {
