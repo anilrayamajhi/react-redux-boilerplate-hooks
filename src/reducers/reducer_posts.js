@@ -1,14 +1,14 @@
-import { FETCH_POSTS, FETCH_BLOG } from '../actions/index';
+import { GET_POSTS, GET_POST } from "../actions/types";
 
-const INITIAL_STATE = { all: [], post: null };
+const INITIAL_STATE = { all: [], post: null, loading: true };
 
-export default function(state = INITIAL_STATE, action){
-  switch(action.type) {
-    case FETCH_POSTS:
-      return { ...state, all: action.payload.data}
+export default function(state = INITIAL_STATE, action) {
+  switch (action.type) {
+    case GET_POSTS:
+      return { ...state, all: action.payload.data };
 
-    case FETCH_BLOG:
-      return { ...state, post: action.payload.data}
+    case GET_POST:
+      return { ...state, post: action.payload.data };
 
     default:
       return state;
